@@ -1,0 +1,136 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  page_1:
+    type: page
+    label: Page 1
+    match:
+      - _posts/2013-01-01-more-jekyll-themes.md
+      - _posts/2014-01-01-text-formatting-examples.md
+      - _posts/2017-01-01-getting-started.md
+      - projects/proj-1.md
+      - projects/proj-2.md
+      - projects/proj-3.md
+      - projects/proj-4.md
+      - projects/proj-5.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '*'
+    exclude:
+      - blog.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+  page_2:
+    type: page
+    label: Page 2
+    folder: pages
+    match:
+      - blog.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+  page_2_1:
+    type: page
+    label: Page 2 1
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+  settings:
+    type: data
+    label: Settings
+    file: settings.yml
+    fields:
+      - type: list
+        name: menu
+        label: Menu
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: url
+              label: Url
+      - type: list
+        name: projects
+        label: Projects
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: url
+              label: Url
+      - type: list
+        name: social
+        label: Social
+        items:
+          type: object
+          fields:
+            - type: string
+              name: icon
+              label: Icon
+            - type: string
+              name: link
+              label: Link
+      - type: object
+        name: seo
+        label: Seo
+        fields:
+          - type: string
+            name: description
+            label: Description
+          - type: string
+            name: rel-author
+            label: Rel Author
+          - type: string
+            name: rel-publisher
+            label: Rel Publisher
+      - type: string
+        name: google-analytics-ua
+        label: Google Analytics Ua
+      - type: object
+        name: disqus
+        label: Disqus
+        fields:
+          - type: boolean
+            name: comments
+            label: Comments
+          - type: string
+            name: disqus_shortname
+            label: Disqus Shortname
